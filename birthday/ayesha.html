@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ayesha</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+background:linear-gradient(45deg,#ff4e8a,#ff9ecf);
+color:white;
+overflow:hidden;
+}
+
+/* title animation */
+
+h1{
+font-size:36px;
+margin-top:40px;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 30px yellow;}
+}
+
+.names{
+font-size:28px;
+margin-top:10px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+.message{
+font-size:20px;
+width:85%;
+margin:auto;
+margin-top:20px;
+min-height:120px;
+}
+
+/* photos */
+
+.photos img{
+width:160px;
+height:160px;
+border-radius:20px;
+margin:10px;
+border:4px solid white;
+object-fit:cover;
+}
+
+/* button */
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+font-size:18px;
+background:white;
+color:#ff4e8a;
+margin-top:20px;
+cursor:pointer;
+}
+
+/* hearts */
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:24px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-900px);opacity:0;}
+}
+
+/* fireworks */
+
+.firework{
+position:fixed;
+width:6px;
+height:6px;
+background:rgb(198, 58, 8);
+border-radius:50%;
+animation:explode 1s ease-out;
+}
+
+@keyframes explode{
+0%{transform:scale(1);}
+100%{transform:scale(25);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎂 Happy Birthday my sweetheart ❤️</h1>
+
+<div class="names">Yhahiya ❤️ Ayesha</div>
+
+<div class="message" id="text"></div>
+
+<div class="photos">
+<img src="img2.jpg">
+<img src="img3.jpg">
+</div>
+
+<button onclick="surprise()">Click for Surprise 💝</button>
+
+<audio autoplay loop>
+<source src="Chella Magale Bgm Ringtone Download - MobCup.Com.Co.mp3">
+</audio>
+
+<script>
+
+/* typing message */
+
+let msg="Dear Ayesha, you are the most beautiful part of my life. Every moment with you is special. I promise to love you, support you, and stand by you forever. Happy Birthday my love ❤️ - From Yhahiya";
+
+let i=0;
+
+function typeText(){
+if(i<msg.length){
+document.getElementById("text").innerHTML+=msg.charAt(i);
+i++;
+setTimeout(typeText,40);
+}
+}
+
+typeText();
+
+/* hearts */
+
+function hearts(){
+for(let i=0;i<30;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+}
+}
+
+hearts();
+
+/* surprise fireworks */
+
+function surprise(){
+
+alert("Happy Birthday Ayesha ❤️ From Yhahiya");
+
+for(let i=0;i<30;i++){
+let f=document.createElement("div");
+f.className="firework";
+f.style.left=Math.random()*100+"%";
+f.style.top=Math.random()*100+"%";
+document.body.appendChild(f);
+
+setTimeout(()=>{f.remove()},1000);
+}
+
+}
+
+</script>
+
+</body>
+</html>
